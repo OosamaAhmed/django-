@@ -1,0 +1,34 @@
+<html> 
+<head>
+    <title>
+        home page 
+    </title>
+</head>
+<body>
+<h1>  home page </h1> 
+<table border= "1">
+    <tbody>
+    <tr>
+        <th>First Name</th>
+        <th>Last Nmae</th>
+        <th>Age</th>
+        <th>Track</th>
+    
+    </tr> 
+    {% for i in students %}
+    <tr>
+    <td> {{ i.fname }}</td>
+     <td> {{ i.lname }}</td>
+    <td> {{ i.age }}</td>
+    <td> {{ i.std_track }}</td>
+    <td><a href="/djapp/detail/{{i.id}}">show</a></td>
+    <td><a href="{% url 'detail' i.id %} ">show</a></td>
+    <td><a href="{% url 'delete' i.id %}">del</a></td>
+
+</tr> 
+     {% endfor %}
+</tbody>
+
+</table>
+</body>
+</html>
