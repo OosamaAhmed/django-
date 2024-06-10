@@ -1,3 +1,5 @@
+{% extends 'djapp/base.html' %}
+
 <html> 
 <head>
     <title>
@@ -5,11 +7,17 @@
     </title>
 </head>
 <body>
-<h1>  home page </h1> 
- <p>  First Name : </p> {{student_details.fname}}
- <p>  Last Name : </p> {{student_details.lname}}
- <p>  age : </p> {{student_details.age}}
- <p>  track Name : </p> {{student_details.std_track}}
+    {% block title_block %}
+    <h1>  home page </h1> 
+
+{% endblock %}
+{% block main_block %}
+<p>  First Name : </p> {{student_details.fname}}
+<p>  Last Name : </p> {{student_details.lname}}
+<p>  age : </p> {{student_details.age}}
+<p>  track Name : </p> {{student_details.std_track}}
+
+{% endblock %}
 
 </body>
 </html>

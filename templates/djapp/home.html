@@ -1,12 +1,22 @@
+{% extends 'djapp/base.html' %}
+{% load static %}
 <html> 
 <head>
+   
     <title>
         home page 
-    </title>
+    </title> 
+    
 </head>
 <body>
-<h1>  home page </h1> 
-<table border= "1">
+    {% block title_block %}
+    <h1>  home page </h1> 
+    <a href="{% url 'add' %}" class="btn btn-info"> add new </a>
+
+<img src="{% static 'img/1.png' %}" alt="">
+{% endblock %}
+{% block main_block %}
+<table border= "1" class="table">
     <tbody>
     <tr>
         <th>First Name</th>
@@ -24,11 +34,15 @@
     <td><a href="/djapp/detail/{{i.id}}">show</a></td>
     <td><a href="{% url 'detail' i.id %} ">show</a></td>
     <td><a href="{% url 'delete' i.id %}">del</a></td>
+    <td><a href="{% url 'edit' i.id %}">edit</a></td>
+
 
 </tr> 
      {% endfor %}
 </tbody>
 
 </table>
+{% endblock %}
+
 </body>
 </html>

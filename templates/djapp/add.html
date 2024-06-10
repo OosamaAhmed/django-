@@ -1,0 +1,18 @@
+{% extends 'djapp/base.html' %}
+
+{% block title_block %}
+<h1> add new student : -</h1>
+<a href="{% url 'home' %}" class="btn btn-info">   home  </a>
+
+{% endblock %}
+ 
+{% block main_block %}
+<form  method="post" class="form-label" >
+    {% csrf_token %}
+{{ form.as_p }}
+<button type="submit"> save </button>
+<button type="reset"> Cansel </button>
+
+</form>
+{% endblock %}
+
