@@ -60,3 +60,6 @@ def edit(request ,std_id):
         # the same name to render on add form
         return render(request , 'djapp/add.html',context)
         
+
+def cv(request):
+	return render(request, 'djapp/cv.html')
